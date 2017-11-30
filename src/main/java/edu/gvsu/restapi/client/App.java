@@ -29,23 +29,23 @@ public class App {
             
             
         	String userName = args[0];
-            if(args.length == 2){
-            	String[] hostAndPort =  args[1].split(":");
-            	if(hostAndPort.length == 1){
-            		chatServerHost = hostAndPort[0];
-            	} else if(hostAndPort.length == 2){
-            		chatServerHost = hostAndPort[0];
-            		try{
-                		chatServerPort = Integer.parseInt(hostAndPort[1]);
-                	}catch(NumberFormatException nfe){
-                		System.out.println("Port param must be a number");
-                		System.exit(-1);
-                	}
-            	}else if(hostAndPort.length != 0){
-            		System.out.println("Wrong # of arguments");
-            		System.exit(-1);
-            	}
-            }
+//            if(args.length == 2){
+//            	String[] hostAndPort =  args[1].split(":");
+//            	if(hostAndPort.length == 1){
+//            		chatServerHost = hostAndPort[0];
+//            	} else if(hostAndPort.length == 2){
+//            		chatServerHost = hostAndPort[0];
+//            		try{
+//                		chatServerPort = Integer.parseInt(hostAndPort[1]);
+//                	}catch(NumberFormatException nfe){
+//                		System.out.println("Port param must be a number");
+//                		System.exit(-1);
+//                	}
+//            	}else if(hostAndPort.length != 0){
+//            		System.out.println("Wrong # of arguments");
+//            		System.exit(-1);
+//            	}
+//            }
         	
             String line;
             String message;

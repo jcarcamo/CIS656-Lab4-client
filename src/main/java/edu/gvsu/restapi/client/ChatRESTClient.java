@@ -25,12 +25,12 @@ public class ChatRESTClient
 	private static Logger logger = Logger.getLogger("edu.gvsu.restapi.client.ChatRESTClient");
 	private static boolean DEBUG = true;
 	// The base URL for all requests.
-    private String APPLICATION_URI;
+    private static final String APPLICATION_URI = "https://upheld-clone-186300.appspot.com";
     // The base URL for all requests.
     private static final String API_VERSION = "v1";
     
     public ChatRESTClient(String host, int port){
-    	APPLICATION_URI =  "http://"+host+":"+port;
+    	//APPLICATION_URI =  "http://"+host+":"+port;
     	
     }
     
@@ -56,7 +56,7 @@ public class ChatRESTClient
 	    // Invoke the client HTTP connector to send the POST request to the server.
 	    if(DEBUG)
 	    	System.out.println("Sending an HTTP POST to " + usersResourceURL + ".");
-	    Response resp = new Client(Protocol.HTTP).handle(request);
+	    Response resp = new Client(Protocol.HTTPS).handle(request);
 
 	    // now, let's check what we got in response.
 	    if(resp.getStatus().equals(Status.SUCCESS_OK)) {
@@ -85,7 +85,7 @@ public class ChatRESTClient
 	    // Invoke the client HTTP connector to send the POST request to the server.
 	    if(DEBUG)
 	    	System.out.println("Sending an HTTP PUT to " + usersResourceURL + ".");
-	    Response resp = new Client(Protocol.HTTP).handle(request);
+	    Response resp = new Client(Protocol.HTTPS).handle(request);
 
 	    // now, let's check what we got in response.
 	    if(resp.getStatus().equals(Status.SUCCESS_OK)) {
@@ -106,7 +106,7 @@ public class ChatRESTClient
         // Invoke the client HTTP connector to send the POST request to the server.
         if(DEBUG)
         	System.out.println("Sending an HTTP DELETE to " + userResourceURL + ".");
-	    Response resp = new Client(Protocol.HTTP).handle(request);
+	    Response resp = new Client(Protocol.HTTPS).handle(request);
 	    if(DEBUG)
 	    	System.out.println(resp.getStatus());
     }
@@ -123,7 +123,7 @@ public class ChatRESTClient
 	    // Invoke the client HTTP connector to send the POST request to the server.
         if(DEBUG)
         	System.out.println("Sending an HTTP GET to " + userResourceURL + ".");
-	    Response resp = new Client(Protocol.HTTP).handle(request);
+	    Response resp = new Client(Protocol.HTTPS).handle(request);
 	    if(DEBUG)
 	    	System.out.println(resp.getStatus());
 	    // Let's see what we got!
@@ -155,7 +155,7 @@ public class ChatRESTClient
 	    // Now we do the HTTP GET
         if(DEBUG)
         	System.out.println("Sending an HTTP GET to " + usersResourceURL + ".");
-	    Response resp = new Client(Protocol.HTTP).handle(request);
+	    Response resp = new Client(Protocol.HTTPS).handle(request);
 
 		// Let's see what we got!
 		if(resp.getStatus().equals(Status.SUCCESS_OK)) {
